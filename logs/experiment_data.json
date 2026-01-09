@@ -1,11 +1,215 @@
 [
-  {
-    "id": "9e82e9b0-9b43-4a78-af43-d5d5ef848a2f",
-    "timestamp": "2025-12-26T01:26:41.177789",
-    "agent": "System",
-    "model": "unknown",
-    "action": "STARTUP",
-    "details": "Target: ./sandbox",
-    "status": "INFO"
-  }
+    {
+        "id": "9e82e9b0-9b43-4a78-af43-d5d5ef848a2f",
+        "timestamp": "2025-12-26T01:26:41.177789",
+        "agent": "System",
+        "model": "unknown",
+        "action": "STARTUP",
+        "details": "Target: ./sandbox",
+        "status": "INFO"
+    },
+    {
+        "id": "a2def8eb-739d-46c6-b84f-c7093343b9e9",
+        "timestamp": "2026-01-09T01:48:24.996975",
+        "agent": "Auditor",
+        "model": "gemini-1.5-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyse le fichier buggy1.py",
+            "output_response": "Bug trouvé à la ligne 10 : variable non définie"
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "01d0984b-4c20-4012-af10-5c9627942818",
+        "timestamp": "2026-01-09T01:48:24.996975",
+        "agent": "Fixer",
+        "model": "gemini-1.5-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": "Corrige le bug dans buggy1.py",
+            "output_response": "Ajout de la définition de variable manquante"
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "c3dc73fd-26d0-4004-bbd4-a737d63c35e2",
+        "timestamp": "2026-01-09T02:26:43.874723",
+        "agent": "Auditor",
+        "model": "gemini-1.5-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyse le fichier buggy1.py",
+            "output_response": "Bug trouvé dans buggy1.py : variable non définie"
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "74c975e5-5ec6-4fc7-a4f3-4811232a2151",
+        "timestamp": "2026-01-09T02:26:43.876701",
+        "agent": "Fixer",
+        "model": "gemini-1.5-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": "Corrige le bug dans buggy1.py",
+            "output_response": "Ajout de la définition de variable manquante dans buggy1.py"
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "7d67ed8a-82d6-40b3-8792-82c373b86f2c",
+        "timestamp": "2026-01-09T02:26:43.897341",
+        "agent": "Judge",
+        "model": "pytest",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Test du fichier corrigé buggy1.py",
+            "output_response": "Tous les tests passent"
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "ccf742d9-44f3-4d80-a860-9841da0deba8",
+        "timestamp": "2026-01-09T02:26:43.913547",
+        "agent": "Auditor",
+        "model": "gemini-1.5-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyse le fichier buggy2.py",
+            "output_response": "Bug trouvé dans buggy2.py : variable non définie"
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "160685a5-a551-41a0-be27-4e45fbbdd631",
+        "timestamp": "2026-01-09T02:26:43.945649",
+        "agent": "Fixer",
+        "model": "gemini-1.5-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": "Corrige le bug dans buggy2.py",
+            "output_response": "Ajout de la définition de variable manquante dans buggy2.py"
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "bbc64d19-0079-4303-a546-955df89cc1e3",
+        "timestamp": "2026-01-09T02:26:43.977192",
+        "agent": "Judge",
+        "model": "pytest",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Test du fichier corrigé buggy2.py",
+            "output_response": "Tous les tests passent"
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "2fffbd9a-d3b8-44aa-a25a-6d3eab17386a",
+        "timestamp": "2026-01-09T02:26:43.993282",
+        "agent": "Auditor",
+        "model": "gemini-1.5-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyse le fichier buggy3.py",
+            "output_response": "Bug trouvé dans buggy3.py : variable non définie"
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "c0999fe6-378c-46a0-bb7c-fbb39193f8d2",
+        "timestamp": "2026-01-09T02:26:44.025569",
+        "agent": "Fixer",
+        "model": "gemini-1.5-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": "Corrige le bug dans buggy3.py",
+            "output_response": "Ajout de la définition de variable manquante dans buggy3.py"
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "ea2dd70e-f97c-48d6-8722-72d53d138808",
+        "timestamp": "2026-01-09T02:26:44.057314",
+        "agent": "Judge",
+        "model": "pytest",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Test du fichier corrigé buggy3.py",
+            "output_response": "Tous les tests passent"
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "0fa562c5-de32-4bc1-92a2-e8d9e174d8b6",
+        "timestamp": "2026-01-09T02:26:44.077316",
+        "agent": "Auditor",
+        "model": "gemini-1.5-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyse le fichier buggy4.py",
+            "output_response": "Bug trouvé dans buggy4.py : variable non définie"
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "1ef38775-9e60-4a45-b82d-242cc42ebfed",
+        "timestamp": "2026-01-09T02:26:44.095057",
+        "agent": "Fixer",
+        "model": "gemini-1.5-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": "Corrige le bug dans buggy4.py",
+            "output_response": "Ajout de la définition de variable manquante dans buggy4.py"
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "6d729228-2b98-4b12-8d56-8ec4773d5922",
+        "timestamp": "2026-01-09T02:26:44.111183",
+        "agent": "Judge",
+        "model": "pytest",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Test du fichier corrigé buggy4.py",
+            "output_response": "Tous les tests passent"
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "1f7b3274-fbcd-46bb-899c-e368df606ad4",
+        "timestamp": "2026-01-09T02:26:44.132765",
+        "agent": "Auditor",
+        "model": "gemini-1.5-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyse le fichier buggy5.py",
+            "output_response": "Bug trouvé dans buggy5.py : variable non définie"
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "d5f8703d-4c00-4ec1-9b72-bdd2424f2d15",
+        "timestamp": "2026-01-09T02:26:44.148726",
+        "agent": "Fixer",
+        "model": "gemini-1.5-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": "Corrige le bug dans buggy5.py",
+            "output_response": "Ajout de la définition de variable manquante dans buggy5.py"
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "b7b314fe-c896-4f69-88c6-9dfb79cad9fd",
+        "timestamp": "2026-01-09T02:26:44.167930",
+        "agent": "Judge",
+        "model": "pytest",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Test du fichier corrigé buggy5.py",
+            "output_response": "Tous les tests passent"
+        },
+        "status": "SUCCESS"
+    }
 ]
