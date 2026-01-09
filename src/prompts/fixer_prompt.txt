@@ -1,0 +1,1 @@
+"Tu es un développeur expert. En te basant sur le rapport de l'Auditeur, réécris le code fourni pour qu'il soit fonctionnel et optimisé. Renvoie uniquement le code complet corrigé."
