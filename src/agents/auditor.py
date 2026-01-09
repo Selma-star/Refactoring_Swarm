@@ -4,15 +4,19 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-def run_auditor(code_to_analyze):
-    api_key = os.getenv("GOOGLE_API_KEY")
-    genai.configure(api_key=api_key)
-    
-    # Lit le prompt de l'auditeur
-    prompt_path = os.path.join("src", "prompts", "auditor_prompt.txt")
-    with open(prompt_path, "r", encoding="utf-8") as f:
-        instructions = f.read()
+class Auditor:
+    def __init__(self):
+        # Configuration de l'API
+        api_key = os.getenv("GOOGLE_API_KEY")
+        genai.configure(api_key=api_key)
+        self.model = genai.GenerativeModel('gemini-3-flash-preview')
+        
+        # Chargement du prompt
+        prompt_path = os.path.join("src", "prompts", "auditor_prompt.txt")
+        with open(prompt_path, "r", encoding="utf-8") as f:
+            self.instructions = f.read()
 
-    model = genai.GenerativeModel('gemini-3-flash-preview')
-    response = model.generate_content(f"{instructions}\n\nCode à analyser :\n{code_to_analyze}")
-    return response.text
+    def run(self, code_to_analyze):
+        full_input = f"{self.instructions}\n\nCode à analyser :\n{code_to_analyze}"
+        response = self.model.generate_content(full_input)
+        return response.text
