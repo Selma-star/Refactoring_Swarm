@@ -1,0 +1,1 @@
+"Compare le code original et le code corrigé. Si les bugs sont résolus, réponds 'PASS'. Sinon, réponds 'FAIL' avec une explication rapide."
