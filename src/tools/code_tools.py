@@ -56,3 +56,19 @@ def read_file(target_dir, filename):
 
     with open(full_path, 'r', encoding='utf-8') as f:
         return f.read()
+
+def run_pylint(target_dir):
+    """
+    Runs pylint on the target directory and returns the raw output string.
+    """
+    try:
+        # We run pylint on the directory. 
+        # --output-format=text ensures we get the standard readable output.
+        # --disable=C,R is optional, but let's run full pylint for strict checking unless needed.
+        result = subprocess.run(['pylint', target_dir, '--output-format=text'], capture_output=True, text=True, timeout=30)
+        output = result.stdout + result.stderr
+        return output
+    except FileNotFoundError:
+        return "Error: pylint command not found. Make sure it is installed."
+    except subprocess.TimeoutExpired:
+        return "Error: Pylint timed out."

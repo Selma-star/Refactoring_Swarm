@@ -1,34 +1,15 @@
 {
     "metadata": {
-        "start_time": "2026-01-28T16:29:11.860581",
-        "end_time": "2026-01-28T16:29:45.943767",
-        "duration_seconds": 34.08318567276001,
+        "start_time": "2026-01-28T17:31:27.349951",
+        "end_time": "2026-01-28T17:34:59.601237",
+        "duration_seconds": 212.25128626823425,
         "target_dir": "test_dataset",
-        "total_iterations": 1
+        "total_iterations": 0
     },
-    "history": [
-        {
-            "agent": "Auditor/Fixer",
-            "type": "AIMessage",
-            "timestamp": "2026-01-28T16:29:45.943766",
-            "content_preview": "Voici l'analyse du code fourni :\n\n**Erreurs de logique et bugs :**\n\n1.  **Division par z\u00e9ro syst\u00e9matique :** Dans la fonction `divide`, le d\u00e9nominateur est cod\u00e9 en dur \u00e0 `0` (`return a / 0`). Cela pro..."
-        },
-        {
-            "agent": "Auditor/Fixer",
-            "type": "AIMessage",
-            "timestamp": "2026-01-28T16:29:45.943766",
-            "content_preview": "Code updated in calculator.py"
-        },
-        {
-            "agent": "Judge",
-            "type": "AIMessage",
-            "timestamp": "2026-01-28T16:29:45.943766",
-            "content_preview": "SUCCESS"
-        }
-    ],
+    "history": [],
     "result": {
-        "status": "SUCCESS",
-        "final_message": "SUCCESS",
-        "error": null
+        "status": "CRASHED",
+        "final_message": "",
+        "error": "Recursion limit of 25 reachedwithout hitting a stop condition. You can increase the limitby setting the `recursion_limit` config key."
     }
 }
