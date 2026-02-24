@@ -1,40 +1,52 @@
 {
     "metadata": {
-        "start_time": "2026-01-30T22:20:20.778567",
-        "end_time": "2026-01-30T22:21:10.309300",
-        "duration_seconds": 49.53073287010193,
-        "target_dir": "test_loop",
-        "total_iterations": 2
+        "start_time": "2026-02-18T23:29:50.958223",
+        "end_time": "2026-02-18T23:32:35.445942",
+        "duration_seconds": 164.4877188205719,
+        "target_dir": "test_dataset",
+        "total_iterations": 3
     },
     "history": [
         {
             "agent": "Auditor",
             "type": "AIMessage",
-            "timestamp": "2026-01-30T22:21:10.310247",
-            "content_preview": "Voici l'analyse du code fourni, limit\u00e9e aux erreurs de logique, bugs de syntaxe et probl\u00e8mes de s\u00e9curit\u00e9 :\n\n**Erreurs de logique et Bugs :**\n*   **Division par z\u00e9ro :** La m\u00e9thode `get_ratio` ne v\u00e9rif..."
+            "timestamp": "2026-02-18T23:32:35.445941",
+            "content_preview": "Voici l'analyse du code fourni, limit\u00e9e aux erreurs de logique, aux bugs de syntaxe et aux probl\u00e8mes de s\u00e9curit\u00e9 :\n\n### Erreurs de logique\n*   **Comparaison directe de flottants :** Dans la fonction `..."
         },
         {
             "agent": "Fixer",
             "type": "AIMessage",
-            "timestamp": "2026-01-30T22:21:10.310247",
-            "content_preview": "Code updated. New score: 5.5"
+            "timestamp": "2026-02-18T23:32:35.445941",
+            "content_preview": "Code updated. New score: 7.65"
         },
         {
             "agent": "Judge",
             "type": "AIMessage",
-            "timestamp": "2026-01-30T22:21:10.310247",
+            "timestamp": "2026-02-18T23:32:35.445941",
             "content_preview": "SUCCESS"
         },
         {
             "agent": "Fixer",
             "type": "AIMessage",
-            "timestamp": "2026-01-30T22:21:10.310247",
-            "content_preview": "Code updated. New score: 5.5"
+            "timestamp": "2026-02-18T23:32:35.445941",
+            "content_preview": "Code updated. New score: 8.18"
         },
         {
             "agent": "Judge",
             "type": "AIMessage",
-            "timestamp": "2026-01-30T22:21:10.310247",
+            "timestamp": "2026-02-18T23:32:35.445941",
+            "content_preview": "SUCCESS"
+        },
+        {
+            "agent": "Fixer",
+            "type": "AIMessage",
+            "timestamp": "2026-02-18T23:32:35.445941",
+            "content_preview": "Code updated. New score: 8.18"
+        },
+        {
+            "agent": "Judge",
+            "type": "AIMessage",
+            "timestamp": "2026-02-18T23:32:35.445941",
             "content_preview": "SUCCESS"
         }
     ],

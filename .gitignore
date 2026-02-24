@@ -5,9 +5,12 @@ __pycache__/
 __pycache__/
 *.pyc
 venv/
+env/
 .env
+.env.example
 .DS_Store
-
+test_dataset/
+test_loop/
 # Dossier de travail temporaire (ne pas récupérer les modifications des étudiants ici)
 sandbox/
 
