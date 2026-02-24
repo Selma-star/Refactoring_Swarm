@@ -64,7 +64,8 @@ def save_experiment_data(initial_state, final_state, start_time, end_time):
     data["result"]["final_message"] = final_state.get("messages", [])[-1].content if final_state.get("messages") else ""
 
     # 4. Write to file
-    output_path = "experiment_data.json"
+    
+    output_path = os.path.join("logs", "experiment_data.json")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4)
     
