@@ -156,10 +156,10 @@ def should_continue(state: GraphState):
 
     # D. Check for "Stuck" Score (Diminishing Returns)
     # If the score is exactly the same as 2 loops ago, we are stuck.
-    if prev_score is not None and current_score == prev_score:
-        print(f"🔄 Score is stuck at {current_score}/10. No improvement detected.")
-        print("🛑 Stopping to prevent infinite loop.")
-        return "end"
+    #if prev_score is not None and current_score == prev_score:
+    #    print(f"🔄 Score is stuck at {current_score}/10. No improvement detected.")
+    #    print("🛑 Stopping to prevent infinite loop.")
+    #    return "end"
 
     # E. Continue Loop
     print(f"🔄 Score {current_score}/10 needs improvement. Looping...")
