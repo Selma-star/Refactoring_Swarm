@@ -1,53 +1,50 @@
-"""
-Module providing basic arithmetic operations: addition and division with validation.
-"""
-
 import math
 
 
-def add(number_a: float, number_b: float) -> float:
-    """Return the sum of two finite floating-point numbers."""
-    if not (math.isfinite(number_a) and math.isfinite(number_b)):
-        raise ValueError("Inputs must be finite numbers (not NaN or Inf).")
-    return number_a + number_b
+def validate_numeric(a, b):
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise TypeError("Les arguments doivent être des nombres (int ou float).")
 
 
-def divide(dividend: float, divisor: float) -> float:
-    """
-    Divide two finite numbers and return the result.
-
-    Raises ZeroDivisionError if the divisor is near zero.
-    Raises ValueError if inputs are not finite.
-    """
-    if not (math.isfinite(dividend) and math.isfinite(divisor)):
-        raise ValueError("Inputs must be finite numbers (not NaN or Inf).")
-
-    if math.isclose(divisor, 0.0, abs_tol=1e-12):
-        raise ZeroDivisionError("Cannot divide by zero or a value near zero.")
-
-    return dividend / divisor
+def add(a, b):
+    validate_numeric(a, b)
+    return a + b
 
 
-def main() -> None:
-    """Run demonstration tests for the arithmetic functions."""
-    print("Testing Calculator...")
+def divide(a, b):
+    validate_numeric(a, b)
+    if math.isclose(float(b), 0.0, abs_tol=1e-12):
+        raise ValueError("Cannot divide by zero")
+    return a / b
+
+
+def test():
+    x = 10
+    y = 5
 
     try:
-        res_add = add(2.0, 3.0)
-        print(f"Addition result: {res_add}")
-    except (ValueError, TypeError):
-        print("Error: Invalid input for addition.")
+        # Test de l'addition
+        resultat_add = add(x, y)
+        print(f"Resultat Addition: {resultat_add}")
+
+        # Test de la division
+        resultat_div = divide(x, y)
+        print(f"Resultat Division: {resultat_div}")
+
+        # Test de la gestion d'exception (Division par zéro)
+        print("Test division par zéro :")
+        divide(x, 0)
+
+    except (TypeError, ValueError) as e:
+        print(f"Erreur capturée : {e}")
 
     try:
-        res_div = divide(10.0, 2.0)
-        print(f"Division result: {res_div}")
-    except (ZeroDivisionError, ValueError, TypeError) as error:
-        # Use a controlled error message to avoid internal leak
-        if isinstance(error, ZeroDivisionError):
-            print("Error: Division by zero or near-zero value.")
-        else:
-            print("Error: Invalid input for division.")
+        # Test de la validation des types
+        print("Test validation des types :")
+        add(x, "5")
+    except TypeError as e:
+        print(f"Erreur de type capturée : {e}")
 
 
 if __name__ == "__main__":
-    main()
+    test()
